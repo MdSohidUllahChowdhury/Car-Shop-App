@@ -1,3 +1,4 @@
+import 'package:car_app/Views/my_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:car_app/Controller/utils.dart';
@@ -20,17 +21,11 @@ class Setting extends StatelessWidget {
                   height: 15,
                 ),
                 CustomBottom(
-                  nameTheBottom: 'Setting',
-                  iconName: Icons.settings,
-                  routName: () => Get.to(() => const Setting()),
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                CustomBottom(
-                  nameTheBottom: 'My Car',
-                  iconName: Icons.car_repair,
-                  routName: () => Get.back(),
+                  nameTheBottom: 'My Cart',
+                  iconName: Icons.shopping_cart,
+                  routName: () => Get.to(() => const MyCart(),
+                      transition: Transition.upToDown,
+                      duration: const Duration(seconds: 1)),
                 ),
                 const SizedBox(
                   height: 8,
@@ -38,16 +33,9 @@ class Setting extends StatelessWidget {
                 CustomBottom(
                   nameTheBottom: 'Social Media Links',
                   iconName: Icons.share,
-                  routName: () => Get.back(),
+                  routName: () => Get.snackbar(
+                      'Working on it', 'New feature will come soon'),
                 ),
-                const SizedBox(
-                  height: 8,
-                ),
-                CustomBottom(
-                  nameTheBottom: 'Setting',
-                  iconName: Icons.settings,
-                  routName: () => Get.to(const Setting()),
-                )
               ],
             ),
           )),

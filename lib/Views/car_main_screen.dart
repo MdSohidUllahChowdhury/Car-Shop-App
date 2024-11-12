@@ -11,7 +11,9 @@ class CarMainScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.grey.shade400,
-          body: Column(children: [
+          body: Column(
+            children: [
+
             Utils.listProInfo(),
             Utils.listSearchInfo(),
             const SizedBox(height: 10),
@@ -33,9 +35,14 @@ class CarMainScreen extends StatelessWidget {
                             const SizedBox(height: 15),
                             Utils.populerViewAll(),
                             const CarCard(),
-                          ]))),
+                          ]
+                        )
+                      )
+                    ),
             ),
-          ])),
+          ]
+        )
+      ),
     );
   }
 }

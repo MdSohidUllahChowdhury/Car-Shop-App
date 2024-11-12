@@ -14,6 +14,7 @@ class WelcomeScreen extends StatelessWidget {
           margin: const EdgeInsets.only(top: 15, left: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            
             children: [
               const Text(
                 'Eays Way To Buy \nYour Dream Car',
@@ -43,29 +44,28 @@ class WelcomeScreen extends StatelessWidget {
                 'lib/Assets/Image/car0.png',
                 height: 350,
                 fit: BoxFit.scaleDown,
-              ),
-              const SizedBox(
-                height: 55,
-              ),
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Get.offAll(
-                      () => const CarMainScreen(),
-                      transition: Transition.leftToRight,
-                    );
-                  },
-                  style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(Colors.white),
-                    elevation: WidgetStateProperty.all(0),
-                    minimumSize:WidgetStateProperty.all<Size>(const Size(280, 55)),
-                  ),
-                  child: const Text(
-                    'Get Started',
-                    style: TextStyle(
-                        color: Colors.black,
-                        letterSpacing: 1.2,
-                        fontFamily: 'Bold'),
+              ),             
+              Expanded(
+                child: Center(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Get.offAll(
+                        () => const CarMainScreen(),
+                        transition: Transition.leftToRight,
+                      );
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(Colors.white),
+                      elevation: WidgetStateProperty.all(0),
+                      minimumSize:WidgetStateProperty.all<Size>(const Size(280, 55)),
+                    ),
+                    child: const Text(
+                      'Get Started',
+                      style: TextStyle(
+                          color: Colors.black,
+                          letterSpacing: 1.2,
+                          fontFamily: 'Bold'),
+                    ),
                   ),
                 ),
               )

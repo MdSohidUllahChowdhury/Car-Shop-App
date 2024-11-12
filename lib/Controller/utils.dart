@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:car_app/Views/my_cart.dart';
 import 'package:car_app/Views/profile.dart';
 
+
 class Utils {
+ 
   static listProInfo() {
     return ListTile(
       contentPadding: const EdgeInsets.only(top: 8, left: 6, right: 6),
@@ -11,7 +13,9 @@ class Utils {
         radius: 30,
         backgroundImage: const AssetImage('lib/Assets/image/profile.png'),
         child: InkWell(
-          onTap: () => Get.to(() => const Profile()),
+          onTap: () => Get.to(() => const Profile(),
+              transition: Transition.leftToRight,
+              duration: const Duration(seconds: 1)),
         ),
       ),
       title: const Text(
@@ -36,15 +40,16 @@ class Utils {
           radius: 20,
           backgroundColor: Colors.white,
           child: IconButton(
-              onPressed: (){
-                Get.to(() =>const MyCart());},
+              onPressed: () {
+                Get.to(() => const MyCart(),
+                    transition: Transition.upToDown,
+                    duration: const Duration(seconds: 1));
+              },
               icon: Icon(
                 Icons.add_shopping_cart,
                 size: 25,
                 color: Colors.grey.shade800,
-              )
-                  )
-                  ),
+              ))),
     );
   }
 
@@ -236,5 +241,4 @@ class Utils {
       ],
     );
   }
-
 }
