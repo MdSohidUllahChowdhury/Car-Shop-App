@@ -1,58 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:car_app/Views/my_cart.dart';
-import 'package:car_app/Views/profile.dart';
-
 
 class Utils {
- 
-  static listProInfo() {
-    return ListTile(
-      contentPadding: const EdgeInsets.only(top: 8, left: 6, right: 6),
-      leading: CircleAvatar(
-        radius: 30,
-        backgroundImage: const AssetImage('lib/Assets/image/profile.png'),
-        child: InkWell(
-          onTap: () => Get.to(() => const Profile(),
-              transition: Transition.leftToRight,
-              duration: const Duration(seconds: 1)),
-        ),
-      ),
-      title: const Text(
-        'Hello',
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: Colors.black,
-          letterSpacing: 1.5,
-        ),
-      ),
-      subtitle: const Text(
-        'Shakil Chowdhury',
-        style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-            color: Colors.black,
-            letterSpacing: 1.2,
-            fontFamily: 'Bold'),
-      ),
-      trailing: CircleAvatar(
-          radius: 20,
-          backgroundColor: Colors.white,
-          child: IconButton(
-              onPressed: () {
-                Get.to(() => const MyCart(),
-                    transition: Transition.upToDown,
-                    duration: const Duration(seconds: 1));
-              },
-              icon: Icon(
-                Icons.add_shopping_cart,
-                size: 25,
-                color: Colors.grey.shade800,
-              ))),
-    );
-  }
-
   static listSearchInfo() {
     return Container(
       margin: const EdgeInsets.all(10),
@@ -160,7 +109,9 @@ class Utils {
     );
   }
 
-  static appbarCustom(barName) {
+  static appbarCustom(
+    String barName,
+  ) {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
       child: Row(

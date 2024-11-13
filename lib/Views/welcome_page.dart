@@ -50,7 +50,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Get.offAll(
-                        () => const CarMainScreen(),
+                        () => CarMainScreen(),
                         transition: Transition.leftToRight,
                       );
                     },

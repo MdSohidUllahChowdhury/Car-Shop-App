@@ -1,9 +1,8 @@
 import 'dart:io';
-
+import 'package:car_app/Views/car_main_screen.dart';
 import 'package:car_app/Views/my_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:car_app/Controller/utils.dart';
 import 'package:car_app/Views/setting.dart';
 import 'package:car_app/Views/welcome_page.dart';
 import 'package:car_app/Widgets/custom_bottom.dart';
@@ -19,7 +18,7 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   TextEditingController nameController = TextEditingController();
-  String? name;
+  String name = '';
 
   File? pickedImage;
   picImage(ImageSource imageSource) async {
@@ -42,7 +41,45 @@ class _ProfileState extends State<Profile> {
           backgroundColor: Colors.grey.shade800,
           body: Column(
             children: [
-              Utils.appbarCustom('Profile'),
+              Padding(
+                padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.grey.shade700,
+                      child: IconButton(
+                          onPressed: () {
+                            Get.to(() => CarMainScreen(giveNAME: name));
+                          },
+                          icon: const Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          )),
+                    ),
+                    const Text(
+                      'Profile Setting',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Bold',
+                        color: Colors.white,
+                        letterSpacing: 1.4,
+                      ),
+                    ),
+                    CircleAvatar(
+                      radius: 25,
+                      backgroundColor: Colors.grey.shade700,
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.favorite,
+                            color: Colors.white,
+                          )),
+                    )
+                  ],
+                ),
+              ),
               const SizedBox(height: 15),
               CircleAvatar(
                 radius: 90,
@@ -130,7 +167,8 @@ class _ProfileState extends State<Profile> {
                               color: Colors.grey.shade800,
                               borderRadius: BorderRadius.circular(24),
                             ),
-                            child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 TextField(
                                   controller: nameController,
@@ -146,16 +184,17 @@ class _ProfileState extends State<Profile> {
                                 ),
                                 const SizedBox(height: 10),
                                 CircleAvatar(
-                                  radius:35,
+                                  radius: 35,
                                   child: IconButton(
-                                    onPressed: (){
-                                      Get.snackbar('Name Updated','');
-                                      Get.back();
-                                      setState(() {
-                                        name = nameController.text;
-                                      });
-                                    }, 
-                                    icon: const Icon(Icons.done,size: 35,)),
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                        Get.snackbar(
+                                            'Name Updated', 'Successful');
+                                        setState(() {
+                                          name = nameController.text;
+                                        });
+                                      },
+                                      icon: const Icon(Icons.done, size: 35)),
                                 )
                               ],
                             ),
