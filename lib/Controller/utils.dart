@@ -111,6 +111,7 @@ class Utils {
 
   static appbarCustom(
     String barName,
+    
   ) {
     return Padding(
       padding: const EdgeInsets.only(top: 10, left: 15, right: 15),

@@ -8,18 +8,15 @@ import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class CarMainScreen extends StatelessWidget {
-  
   String? giveNAME;
-  CarMainScreen({super.key,this.giveNAME});
+  CarMainScreen({super.key, this.giveNAME});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.grey.shade400,
-          body: Column(
-            children: [
-
+          body: Column(children: [
             ListTile(
               contentPadding: const EdgeInsets.only(top: 8, left: 6, right: 6),
               leading: CircleAvatar(
@@ -42,10 +39,10 @@ class CarMainScreen extends StatelessWidget {
                 ),
               ),
               subtitle: InkWell(
-                onTap: () => Get.to(()=>const Profile()),
+                onTap: () => Get.to(() => const Profile()),
                 child: Text(
-                 giveNAME != null ? giveNAME! : '✏️Guest',
-                  style:const TextStyle(
+                  giveNAME != null ? giveNAME! : '✏️Guest',
+                  style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: Colors.black,
@@ -68,7 +65,6 @@ class CarMainScreen extends StatelessWidget {
                         color: Colors.grey.shade800,
                       ))),
             ),
-            
             Utils.listSearchInfo(),
             const SizedBox(height: 10),
             carLogo(),

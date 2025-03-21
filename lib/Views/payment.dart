@@ -33,7 +33,7 @@ class Payment extends StatelessWidget {
                     borderRadius: BorderRadius.circular(24)),
                 child: const Center(
                   child: Text(
-                    '\$78,589',
+                    '\$78,580',
                     style: TextStyle(
                       fontSize: 35,
                       color: Colors.black,
@@ -72,9 +72,9 @@ class Payment extends StatelessWidget {
                 children: [
                   ProfileDetails(
                       iconNmae: Icons.payment_outlined, titleName: 'VISA'),
-                  ProfileDetails(iconNmae: Icons.payment, titleName: 'VODA'),
+                  ProfileDetails(iconNmae: Icons.payment, titleName: 'NCB'),
                   ProfileDetails(
-                      iconNmae: Icons.payment, titleName: 'DUCH'),
+                      iconNmae: Icons.payment, titleName: 'JCB'),
                 ],
               ),
               const SizedBox(
@@ -88,7 +88,10 @@ class Payment extends StatelessWidget {
                     letterSpacing: 1.3,
                     fontFamily: 'Bold'),
               ),
-              const SizedBox(height: 6),
+              const Divider(height: 6,color: Colors.white,thickness: 2,),
+              const SizedBox(
+                height: 15,
+              ),
               CustomBottom(
                 nameTheBottom: '\$25,589 Payment Done',
                 iconName: Icons.circle_outlined,

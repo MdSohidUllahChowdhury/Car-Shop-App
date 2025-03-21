@@ -6,6 +6,7 @@ import 'package:car_app/Widgets/feature_details.dart';
 
 class CarDetails extends StatelessWidget {
   final String image, brandName, reating, priceCar;
+
   const CarDetails(
       {super.key,
       required this.image,
@@ -30,7 +31,6 @@ class CarDetails extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
-                //height: MediaQuery.of(context).size.height * .62,
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(

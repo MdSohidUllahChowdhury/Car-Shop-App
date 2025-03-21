@@ -13,28 +13,31 @@ class WelcomeScreen extends StatelessWidget {
         body: Container(
           margin: const EdgeInsets.only(top: 15, left: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             
             children: [
-              const Text(
-                'Eays Way To Buy \nYour Dream Car',
-                style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white,
-                    letterSpacing: 1.2,
-                    fontFamily: 'Bold'),
+              const Align(alignment: Alignment.topLeft,
+                child: Text(
+                  'Eays Way To Buy \nYour Dream Car',
+                  style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white,
+                      letterSpacing: 1.2,
+                      fontFamily: 'Bold'),
+                ),
               ),
               const SizedBox(
                 height: 15,
               ),
-              const Text(
-                'By using the car, you can move quickly\nfrom one place to another\nin your daily life.',
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w200,
-                  color: Colors.white,
-                  letterSpacing: 1.2,
+              const Align(alignment: Alignment.topLeft,
+                child:Text(
+                  'Simplify your car search.\nFind your perfect ride with our app\nYour dream car, a tap away.\nBrowse, compare, and buy.',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.white,
+                    letterSpacing: 1.2,
+                  ),
                 ),
               ),
               const SizedBox(
@@ -43,7 +46,11 @@ class WelcomeScreen extends StatelessWidget {
               Image.asset(
                 'lib/Assets/Image/car0.png',
                 height: 350,
-                fit: BoxFit.scaleDown,
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.centerRight,
+              ),
+              const SizedBox(
+                height: 35,
               ),             
               Expanded(
                 child: Center(
